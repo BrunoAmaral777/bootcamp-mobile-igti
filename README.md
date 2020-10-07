@@ -9,5 +9,3 @@ Bootcamp Mobile IGTI
 #### Tela de Resultado
 ![mod2-tela-resultado-salario-liquido](https://github.com/leandroIFarias/bootcamp-mobile-igti/blob/main/mod2-tela-resultado-salario-liquido.jpeg)
 
-#### Video
-![mod2-video-salario-liquido.mp4](https://github.com/leandroIFarias/bootcamp-mobile-igti/blob/main/mod2-video-salario-liquido.mp4)
