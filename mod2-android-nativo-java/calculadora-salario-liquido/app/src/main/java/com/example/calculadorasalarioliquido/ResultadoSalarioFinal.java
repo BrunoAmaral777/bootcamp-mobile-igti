@@ -6,7 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 public class ResultadoSalarioFinal extends AppCompatActivity {
@@ -21,9 +25,9 @@ public class ResultadoSalarioFinal extends AppCompatActivity {
 
         ReceberDadosMain();
 
+        ExibirDadosNaTela();
 
-
-        RetornarTelaPrincipal();
+        RetornarParaTelaPrincipal();
     }
 
 
@@ -37,8 +41,35 @@ public class ResultadoSalarioFinal extends AppCompatActivity {
     }
 
 
+    private void ExibirDadosNaTela(){
+        TextView textSalarioBruto;
+        TextView textINSS;
+        TextView textIRRF;
+        TextView textOutrosDescontos;
 
-    private void RetornarTelaPrincipal(){
+        TextView textSalarioLiquido;
+        TextView textPorcentagemDesconto;
+
+        textSalarioBruto = findViewById(R.id.text_salario_bruto_resultado);
+        textINSS = findViewById(R.id.text_inss_resultado);
+        textIRRF = findViewById(R.id.text_irrf_resultado);
+        textOutrosDescontos = findViewById(R.id.text_outros_descontos_resultado);
+
+        textSalarioLiquido = findViewById(R.id.text_salario_liquido_resultado);
+        textPorcentagemDesconto = findViewById(R.id.text_desconto_porcentagem_resultado);
+
+        NumberFormat formatoBR = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
+
+        textSalarioBruto.setText(formatoBR.format(salarioBruto));
+        textINSS.setText(formatoBR.format(CalculoSalarioUtil.CalculoDescontoInss(salarioBruto)));
+        textIRRF.setText(formatoBR.format(CalculoSalarioUtil.CalculoIrrf(salarioBruto, numeroDependentes)));
+        textOutrosDescontos.setText(formatoBR.format(outrosDescontos));
+        textSalarioLiquido.setText(formatoBR.format(CalculoSalarioUtil.SalarioLiquido(salarioBruto,numeroDependentes,outrosDescontos)));
+        textPorcentagemDesconto.setText(CalculoSalarioUtil.PorcentagemDescontosTotais(salarioBruto,numeroDependentes,outrosDescontos));
+    }
+
+
+    private void RetornarParaTelaPrincipal(){
         Button btnVoltarParaTelaPrincipal;
         btnVoltarParaTelaPrincipal = findViewById(R.id.btn_voltar_tela_resultado);
 

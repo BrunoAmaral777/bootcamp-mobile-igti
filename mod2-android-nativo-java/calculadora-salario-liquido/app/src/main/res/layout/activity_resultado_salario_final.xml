@@ -30,7 +30,7 @@
             android:layout_marginLeft="25dp"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:text="Salário Bruto R$"
+            android:text="Salário Bruto"
             android:textSize="20sp"
             android:id="@+id/textSalarioBrutoResultado"/>
 
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="50dp">
+        >
 
         <TextView
             android:id="@+id/textIrrfResultado"
@@ -87,7 +87,34 @@
             android:text="IRRF" />
 
         <TextView
-            android:id="@+id/edt_irrf_resultado"
+            android:id="@+id/text_irrf_resultado"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:hint="0,00"
+            android:textAlignment="textEnd" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:id="@+id/textOutrosDescontosResultado"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:textSize="20sp"
+            android:gravity="left"
+            android:text="Outros Descontos" />
+
+        <TextView
+            android:id="@+id/text_outros_descontos_resultado"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -114,7 +141,7 @@
             android:text="Salário Liquido" />
 
         <TextView
-            android:id="@+id/edt_salario_liquido_resultado"
+            android:id="@+id/text_salario_liquido_resultado"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -139,10 +166,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Descontos"
-            android:id="@+id/textDescontosResultado"/>
+            android:id="@+id/textDescontosPorcentagemResultado"/>
 
         <TextView
-            android:id="@+id/text_desconto_resultado"
+            android:id="@+id/text_desconto_porcentagem_resultado"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
