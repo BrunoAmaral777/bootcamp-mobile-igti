@@ -156,8 +156,8 @@
         android:layout_width="250dp"
         android:layout_height="55dp"
         android:layout_margin="50dp"
-        android:text="Calcular"
-        android:id="@+id/btn_calcular_tela_main"
+        android:text="Voltar"
+        android:id="@+id/btn_voltar_tela_resultado"
         />
 
 </LinearLayout>
