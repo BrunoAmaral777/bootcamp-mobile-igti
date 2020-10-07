@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+public class ResultsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         HabilitarFullScreen();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_results);
     }
 
     private void HabilitarFullScreen(){
