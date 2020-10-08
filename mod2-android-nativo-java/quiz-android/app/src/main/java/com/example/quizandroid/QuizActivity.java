@@ -48,7 +48,6 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-
     private void MostrarResultsActivity() {
         Button btnRetornarParaTelaPrincipal;
         btnRetornarParaTelaPrincipal = findViewById(R.id.btnMain);
