@@ -2,24 +2,24 @@ package com.example.quizandroid;
 
 public class Questions {
 
-    private int idResposta;
+    private int idQuestao;
 
     private boolean respostaCorreta;
 
-    public Questions(int idResposta, boolean respostaCorreta) {
+    public Questions(int idQuestao, boolean respostaCorreta) {
         //Define os valores por meio dos argumentos passado pelo construtor
-        this.idResposta = idResposta;
+        this.idQuestao = idQuestao;
         this.respostaCorreta = respostaCorreta;
     }
 
     // retorna o ID da questao passada
-    public int getIdResposta() {
-        return idResposta;
+    public int getIdQuestao() {
+        return idQuestao;
     }
 
     // define o ID a questao passada
-    public void setIdResposta(int idResposta) {
-        this.idResposta = idResposta;
+    public void setIdQuestao(int idQuestao) {
+        this.idQuestao = idQuestao;
     }
 
     // retorna a resposta correta da questao

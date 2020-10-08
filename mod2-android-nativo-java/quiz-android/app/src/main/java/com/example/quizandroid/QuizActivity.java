@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -46,7 +45,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private void QuestaoAtual(){
         textQuestion = findViewById(R.id.textPergunta);
-        final int question = mQuestionsArray[mCurrentIndex].getIdResposta();
+        final int question = mQuestionsArray[mCurrentIndex].getIdQuestao();
         textQuestion.setText(question);
     }
 
@@ -79,16 +78,15 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void ValidarResposta(boolean userClick) {
-        Toast toastResposta;
+        final Toast toastResposta;
         Boolean resposta = mQuestionsArray[mCurrentIndex].isRespostaCorreta();
         if (userClick == resposta){
             totalRespostasCorretas = totalRespostasCorretas + 1; // soma de respostas corretas
             toastResposta = Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_SHORT);
-            toastResposta.show();
         } else{
             toastResposta = Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT);
-            toastResposta.show();
         }
+
     }
 
 
@@ -101,7 +99,7 @@ public class QuizActivity extends AppCompatActivity {
             intentReturnMain.putExtra(TOTAL_QUESTOES, totalQuestoes);
             startActivity(intentReturnMain);
         } else {
-            int novapergunta = mQuestionsArray[mCurrentIndex].getIdResposta();
+            int novapergunta = mQuestionsArray[mCurrentIndex].getIdQuestao();
             textQuestion.setText(novapergunta);
         }
     }
