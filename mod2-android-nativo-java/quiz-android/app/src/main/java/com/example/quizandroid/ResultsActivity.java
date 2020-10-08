@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
 public class ResultsActivity extends AppCompatActivity {
@@ -22,6 +20,9 @@ public class ResultsActivity extends AppCompatActivity {
         RetornarMainActivity();
     }
 
+
+
+
     private void RetornarMainActivity() {
         Button btnRetornarParaTelaPrincipal;
         btnRetornarParaTelaPrincipal = findViewById(R.id.btnReiniciar);
@@ -29,7 +30,7 @@ public class ResultsActivity extends AppCompatActivity {
         btnRetornarParaTelaPrincipal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnMain = new Intent(ResultsActivity.this, MainActivity.class);
+                Intent returnMain = new Intent(ResultsActivity.this, QuizActivity.class);
                 startActivity(returnMain);
             }
         });

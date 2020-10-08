@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Quiz Android</string>
 
-    <!-- activity_main.xml -->
+    <!-- activity_quiz.xml -->
     <string name="text_questao">Questão Android</string>
     <string name="btn_verdadeiro">Verdadeiro</string>
     <string name="btn_falso">Falso</string>
