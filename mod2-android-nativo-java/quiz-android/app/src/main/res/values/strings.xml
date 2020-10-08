@@ -5,6 +5,8 @@
     <string name="text_questao">Questão Android</string>
     <string name="btn_verdadeiro">Verdadeiro</string>
     <string name="btn_falso">Falso</string>
+    <string name = "correct_toast"> Você acertou, parabéns! :) </string>
+    <string name = "incorrect_toast"> Ops, essa você errou. :/ </string>
 
     <!-- activity_results_main.xml -->
     <string name="text_resultado">% de acertos</string>
