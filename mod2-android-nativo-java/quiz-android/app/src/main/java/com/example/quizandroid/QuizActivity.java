@@ -22,6 +22,19 @@ public class QuizActivity extends AppCompatActivity {
         MostrarResultsActivity();
     }
 
+    private void ListaQuestoesQuiz(){
+        Questions[] mQuestions = new Questions[]{
+                new Questions(R.string.question_01, true),
+                new Questions(R.string.question_02, false),
+                new Questions(R.string.question_03, true),
+                new Questions(R.string.question_04, true),
+                new Questions(R.string.question_05, true),
+                new Questions(R.string.question_06, false),
+                new Questions(R.string.question_07, true),
+                new Questions(R.string.question_08, true),
+        };
+
+    }
 
     private void ClickBtnVerdadeiro(){
         Button btnVerdadeiro;
