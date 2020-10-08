@@ -9,6 +9,7 @@
     <string name = "incorrect_toast"> Ops, essa você errou. :/ </string>
 
     <!-- activity_results_main.xml -->
-    <string name="text_resultado">% de acertos</string>
+    <string name="text_resultado">acertos</string>
+    <string name="text_de_acertos">de acertos</string>
     <string name="btn_reiniciar">Reiniciar</string>
 </resources>

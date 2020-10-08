@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +12,12 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
     private int mCurrentIndex = 0;
+    private int totalQuestoes = 0;
+    private int totalRespostasCorretas = 0;
+    public static final String VALOR_TOTAL_ACERTOS = "valorTotalAcertos";
+    public static final String TOTAL_QUESTOES = "totalQuestoesQuiz";
+
+
     TextView textQuestion;
 
     Questions[] mQuestionsArray = new Questions[]{
@@ -72,19 +79,27 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void ValidarResposta(boolean userClick) {
+        Toast toastResposta;
         Boolean resposta = mQuestionsArray[mCurrentIndex].isRespostaCorreta();
         if (userClick == resposta){
-            Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_LONG).show();
+            totalRespostasCorretas = totalRespostasCorretas + 1; // soma de respostas corretas
+            toastResposta = Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_SHORT);
+            toastResposta.show();
         } else{
-            Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
+            toastResposta = Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT);
+            toastResposta.show();
         }
     }
+
 
     private void ValidarChegouNoFinal() {
         mCurrentIndex = mCurrentIndex + 1;
         if (mCurrentIndex == mQuestionsArray.length){
-            Intent returnMain = new Intent(QuizActivity.this, ResultsActivity.class);
-            startActivity(returnMain);
+            totalQuestoes = Integer.parseInt(String.valueOf(mQuestionsArray.length));
+            Intent intentReturnMain = new Intent(QuizActivity.this, ResultsActivity.class);
+            intentReturnMain.putExtra(VALOR_TOTAL_ACERTOS, totalRespostasCorretas);
+            intentReturnMain.putExtra(TOTAL_QUESTOES, totalQuestoes);
+            startActivity(intentReturnMain);
         } else {
             int novapergunta = mQuestionsArray[mCurrentIndex].getIdResposta();
             textQuestion.setText(novapergunta);
