@@ -5,13 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="bottom"
+    android:gravity="center"
     tools:context=".MainActivity">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="380dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#DDDCDC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
+
+
+            <TextView
+                android:id="@+id/textPergunta"
+                android:layout_width="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_height="400dp"/>
+
+            <LinearLayout
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <Button
+                    android:id="@+id/btnVerdadeiro"
+                    android:layout_width="165dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#03FFFFFF"
+                    android:text="VERDADEIRO"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnFalso"
+                    android:layout_width="165dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#03FFFFFF"
+                    android:text="FALSO"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
 
 
     <Button
         android:id="@+id/btnMain"
-        android:layout_margin="50dp"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
