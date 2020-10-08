@@ -24,6 +24,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
+                android:text="@string/text_questao"
                 android:layout_height="400dp"/>
 
             <LinearLayout
@@ -39,7 +40,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="2dp"
                     android:background="#03FFFFFF"
-                    android:text="VERDADEIRO"
+                    android:text="@string/btn_verdadeiro"
                     android:textSize="20sp" />
 
                 <Button
@@ -51,7 +52,7 @@
                     android:layout_marginBottom="2dp"
                     android:background="#00FFFFFF"
                     android:backgroundTint="#03FFFFFF"
-                    android:text="FALSO"
+                    android:text="@string/btn_falso"
                     android:textSize="20sp" />
 
             </LinearLayout>
