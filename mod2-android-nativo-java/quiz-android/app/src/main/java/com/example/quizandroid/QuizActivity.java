@@ -6,9 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
+    private int mCurrentIndex = 0;
+    TextView textQuestion;
+
+    Questions[] mQuestionsArray = new Questions[]{
+            new Questions(R.string.question_01, true),
+            new Questions(R.string.question_02, false),
+            new Questions(R.string.question_03, true),
+            new Questions(R.string.question_04, true),
+            new Questions(R.string.question_05, true),
+            new Questions(R.string.question_06, false),
+            new Questions(R.string.question_07, true),
+            new Questions(R.string.question_08, true),
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,24 +31,18 @@ public class QuizActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // Remove a ActionBar da Activity
         setContentView(R.layout.activity_quiz);
 
+        QuestaoAtual();
         ClickBtnVerdadeiro();
         ClickBtnFalso();
-        MostrarResultsActivity();
-    }
-
-    private void ListaQuestoesQuiz(){
-        Questions[] mQuestions = new Questions[]{
-                new Questions(R.string.question_01, true),
-                new Questions(R.string.question_02, false),
-                new Questions(R.string.question_03, true),
-                new Questions(R.string.question_04, true),
-                new Questions(R.string.question_05, true),
-                new Questions(R.string.question_06, false),
-                new Questions(R.string.question_07, true),
-                new Questions(R.string.question_08, true),
-        };
 
     }
+
+    private void QuestaoAtual(){
+        textQuestion = findViewById(R.id.textPergunta);
+        final int question = mQuestionsArray[mCurrentIndex].getIdResposta();
+        textQuestion.setText(question);
+    }
+
 
     private void ClickBtnVerdadeiro(){
         Button btnVerdadeiro;
@@ -43,7 +51,8 @@ public class QuizActivity extends AppCompatActivity {
         btnVerdadeiro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_LONG).show();
+                ValidarResposta(true);
+                ValidarChegouNoFinal();
             }
         });
 
@@ -56,21 +65,29 @@ public class QuizActivity extends AppCompatActivity {
         btnFalso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
+                ValidarResposta(false);
+                ValidarChegouNoFinal();
             }
         });
     }
 
-    private void MostrarResultsActivity() {
-        Button btnRetornarParaTelaPrincipal;
-        btnRetornarParaTelaPrincipal = findViewById(R.id.btnMain);
+    private void ValidarResposta(boolean userClick) {
+        Boolean resposta = mQuestionsArray[mCurrentIndex].isRespostaCorreta();
+        if (userClick == resposta){
+            Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_LONG).show();
+        } else{
+            Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
+        }
+    }
 
-        btnRetornarParaTelaPrincipal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent returnMain = new Intent(QuizActivity.this, ResultsActivity.class);
-                startActivity(returnMain);
-            }
-        });
+    private void ValidarChegouNoFinal() {
+        mCurrentIndex = mCurrentIndex + 1;
+        if (mCurrentIndex == mQuestionsArray.length){
+            Intent returnMain = new Intent(QuizActivity.this, ResultsActivity.class);
+            startActivity(returnMain);
+        } else {
+            int novapergunta = mQuestionsArray[mCurrentIndex].getIdResposta();
+            textQuestion.setText(novapergunta);
+        }
     }
 }
