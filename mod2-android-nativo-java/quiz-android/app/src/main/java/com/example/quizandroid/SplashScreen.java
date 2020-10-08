@@ -13,8 +13,10 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        HabilitarFullScreen();
+        SettingsActivtyUtil.HabilitarFullScreen(SplashScreen.this);
+        getSupportActionBar().hide(); // Remove a ActionBar da Activity
         setContentView(R.layout.activity_splash_screen);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -30,13 +32,5 @@ public class SplashScreen extends AppCompatActivity {
         finish();
     }
 
-    private void HabilitarFullScreen(){
-        // remove title
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Remove a ActionBar da Activity
-        getSupportActionBar().hide();
-    }
 }

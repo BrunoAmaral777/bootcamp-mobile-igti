@@ -18,9 +18,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ResultsActivity" />
+        <activity android:name=".ResultsActivity"
+            />
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity"
+            />
 
     </application>
 
