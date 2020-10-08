@@ -2,6 +2,7 @@ package com.example.quizandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Window;
 import android.view.WindowManager;
 

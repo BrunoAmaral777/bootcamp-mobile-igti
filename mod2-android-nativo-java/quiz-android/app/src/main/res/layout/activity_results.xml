@@ -5,4 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ResultsActivity"/>
+    android:gravity="center"
+    tools:context=".ResultsActivity">
+
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="250dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnReiniciar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="reiniciar" />
+</LinearLayout>
