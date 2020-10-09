@@ -34,9 +34,8 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //setTheme(R.style.AppTheme); //Define o Style
         super.onCreate(savedInstanceState);
-        SettingsActivtyUtil.HabilitarFullScreen(QuizActivity.this);
-        getSupportActionBar().hide(); // Remove a ActionBar da Activity
         setContentView(R.layout.activity_quiz);
 
         QuestaoAtual();

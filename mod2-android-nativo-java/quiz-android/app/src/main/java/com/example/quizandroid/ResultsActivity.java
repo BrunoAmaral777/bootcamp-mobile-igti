@@ -21,8 +21,6 @@ public class ResultsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SettingsActivtyUtil.HabilitarFullScreen(ResultsActivity.this);
-        getSupportActionBar().hide(); // Remove a ActionBar da Activity
         setContentView(R.layout.activity_results);
 
         ReceberDadosMain();

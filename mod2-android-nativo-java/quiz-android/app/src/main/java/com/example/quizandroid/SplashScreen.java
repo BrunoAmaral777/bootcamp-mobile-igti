@@ -10,29 +10,35 @@ import android.widget.ImageView;
 
 public class SplashScreen extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        SettingsActivtyUtil.HabilitarFullScreen(SplashScreen.this);
-        getSupportActionBar().hide(); // Remove a ActionBar da Activity
         setContentView(R.layout.activity_splash_screen);
+        SplashScreenTimer();
+    }
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                MostrarMainActivity();
-            }
-        }, 2000);
+    private void SplashScreenTimer(){
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        final SharedPreferences.Editor editor = preferences.edit();
+        Boolean firstLogin = preferences.getBoolean("FIRST", true);
+
+        if(firstLogin){
+            editor.putBoolean("FIRST", false);
+            editor.commit();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    MostrarMainActivity();
+                }
+            }, 2000);
+        }else{
+            MostrarMainActivity();
+        }
     }
 
     private void MostrarMainActivity() {
-        Intent intent = new Intent(SplashScreen.this, QuizActivity.class);
-        startActivity(intent);
-        finish();
+        startActivity(new Intent(SplashScreen.this, QuizActivity.class));
     }
-
 
 }
