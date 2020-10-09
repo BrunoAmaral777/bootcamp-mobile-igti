@@ -12,4 +12,5 @@
     <string name="text_resultado">acertos</string>
     <string name="text_de_acertos">de acertos</string>
     <string name="btn_reiniciar">Reiniciar</string>
+
 </resources>

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -86,7 +88,15 @@ public class QuizActivity extends AppCompatActivity {
         } else{
             toastResposta = Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT);
         }
-
+        toastResposta.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP, 0, 250);
+        toastResposta.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toastResposta.cancel();
+            }
+        }, 750);
     }
 
 

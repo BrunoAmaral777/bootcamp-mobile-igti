@@ -8,15 +8,13 @@
     android:background="@android:color/white"
     tools:context=".SplashScreen">
 
-    <TextView
+    <ImageView
+        android:id="@+id/img_igti"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_weight="1"
         android:gravity="bottom|center"
-        android:text="Making Fun Apps"
-        android:textColor="#050505"
-        android:textSize="18sp" />
+        />
 
     <TextView
         android:layout_width="match_parent"
