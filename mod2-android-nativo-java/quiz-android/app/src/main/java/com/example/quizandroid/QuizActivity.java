@@ -2,6 +2,7 @@ package com.example.quizandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -100,16 +101,24 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void ValidarChegouNoFinal() {
-        mCurrentIndex = mCurrentIndex + 1;
-        if (mCurrentIndex == mQuestionsArray.length){
-            totalQuestoes = Integer.parseInt(String.valueOf(mQuestionsArray.length));
-            Intent intentReturnMain = new Intent(QuizActivity.this, ResultsActivity.class);
-            intentReturnMain.putExtra(VALOR_TOTAL_ACERTOS, totalRespostasCorretas);
-            intentReturnMain.putExtra(TOTAL_QUESTOES, totalQuestoes);
-            startActivity(intentReturnMain);
-        } else {
-            int novapergunta = mQuestionsArray[mCurrentIndex].getIdQuestao();
-            textQuestion.setText(novapergunta);
-        }
+        Handler handlerNextQuestion = new Handler();
+        handlerNextQuestion.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mCurrentIndex = mCurrentIndex + 1;
+                if (mCurrentIndex == mQuestionsArray.length){
+                    totalQuestoes = Integer.parseInt(String.valueOf(mQuestionsArray.length));
+                    Intent intentReturnMain = new Intent(QuizActivity.this, ResultsActivity.class);
+                    intentReturnMain.putExtra(VALOR_TOTAL_ACERTOS, totalRespostasCorretas);
+                    intentReturnMain.putExtra(TOTAL_QUESTOES, totalQuestoes);
+                    startActivity(intentReturnMain);
+                } else {
+                    int novapergunta = mQuestionsArray[mCurrentIndex].getIdQuestao();
+                    textQuestion.setText(novapergunta);
+                }
+            }
+        }, 1000);
+
+
     }
 }
