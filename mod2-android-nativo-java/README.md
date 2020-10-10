@@ -24,5 +24,5 @@ Bootcamp Mobile IGTI - Projetos do Modulo 2:
    ![mod2-quiz-tela-resultado.jpeg](https://github.com/leandroIFarias/bootcamp-mobile-igti/blob/main/mod2-android-nativo-java/mod2-quiz-tela-resultado.jpeg)
   
   ##### Video
-   ![mod2-quiz-video.gif](hhttps://github.com/leandroIFarias/bootcamp-mobile-igti/blob/main/mod2-android-nativo-java/mod2-quiz-video.gif)
+   ![mod2-quiz-video.gif](https://github.com/leandroIFarias/bootcamp-mobile-igti/blob/main/mod2-android-nativo-java/mod2-quiz-video.gif)
     
