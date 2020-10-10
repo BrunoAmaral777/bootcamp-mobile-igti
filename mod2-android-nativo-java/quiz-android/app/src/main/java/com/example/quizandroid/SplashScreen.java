@@ -18,6 +18,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void SplashScreenTimer(){
+        //Define a Splash Screen para mostrar apenas na primeira vez
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
         final SharedPreferences.Editor editor = preferences.edit();
         Boolean firstLogin = preferences.getBoolean("FIRST", true);
